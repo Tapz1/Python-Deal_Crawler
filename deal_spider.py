@@ -1,5 +1,5 @@
 ##########
-# Programmer: Chris Tapia & Ehsun Farooq
+# Programmer: Chris Tapia
 # Program Description: Web Crawler to scrape the latest deals for those that are too busy, sends email of those deals
 #       and can also send those emails at a more specific time.
 # Date Modified: 12/06/18
@@ -122,24 +122,25 @@ def slickdeals_automate(h, m):
 
     t = Timer(secs, lambda: slickdeals_spider())  # lambda allows our function to be called separate from the Timer
     t.start()
+    
 
-
-# starting menu
-print("Which would you like to do?")
-choice = input("""
-    1. Run Menu
-    2. Send me email of deals at a later time
-    3. Exit
-""")
-if choice == "1":
-    menu()
-elif choice == "2":
-    ebay_automate(15, 30)   # here you can put when to send the email
-    slickdeals_automate(15, 30)
-elif choice == "3":
-    sys.exit
-elif choice != "":
-    print("\nNot a valid choice!")
+if __name__ == "__main__"
+    # starting menu
+    print("Which would you like to do?")
+    choice = input("""
+        1. Run Menu
+        2. Send me email of deals at a later time
+        3. Exit
+    """)
+    if choice == "1":
+        menu()
+    elif choice == "2":
+        ebay_automate(15, 30)   # here you can put when to send the email
+        slickdeals_automate(15, 30)
+    elif choice == "3":
+        sys.exit
+    elif choice != "":
+        print("\nNot a valid choice!")
 
 
 ## end code ##
